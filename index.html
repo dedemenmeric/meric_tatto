@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Meriç'in dövme fırsatları - Minimal, ücretsiz ve maliyetine dövmeler.">
+  <meta name="keywords" content="dövme, tattoo, Meriç, minimal dövme, ücretsiz dövme, maliyetine dövme">
+  <title>Dövme Fırsatları | Tattoo by Meriç</title>
+ 
+  <!-- container header tato vs şeylerin stilleri burda --> 
+  <style>
+    body { font-family: sans-serif; background: linear-gradient(270deg, #0e1ead 20%, #060925 50%);
+    color: #eee; margin: 0; padding: 0; }
+
+    header { background: #222; padding: 
+    20px; text-align: center; }
+
+    h1 { margin: 0; }
+
+    .container { padding: 20px; }
+
+    .tattoo { border: 1px solid #444; 
+    padding: 10px; margin-bottom: 20px; background: linear-gradient(270deg, #0a0f3b 70%, #1327d8 100%);
+    border-radius: 8px; text-align: center;}
+
+    .tattoo img {  max-height: 150px;}
+
+    .cta {  text-align: center; padding:
+     20px; margin-top: 20px; }
+
+    a { color: #4f5ff0; text-decoration: none; }
+
+      .main-header {
+      background: linear-gradient(270deg, #0a0f3b 70%, #1327d8 100%);
+      padding: 30px 10px 20px 10px;
+      border-radius: 0 0 24px 24px;
+      box-shadow: 0 6px 32px 0 rgba(0,0,0,0.18);
+      text-align: center;
+      margin-bottom: 40px;
+      }
+      .main-header h1 {
+        font-size: 2.2rem;
+        color: #4f5ff0;
+        margin-bottom: 16px;
+        letter-spacing: 2px;
+        font-family: 'Segoe UI', Arial, sans-serif;
+      }
+      .main-header p {
+        font-size: 1.1rem;
+        color: #eeeeee;
+        line-height: 1.7;
+        margin: 0 auto;
+        max-width: 1500px;
+      }
+      .main-header .welcome {
+        font-size: 1.2rem;
+        color: #ffffff;
+        font-weight: bold;
+        letter-spacing: 1px;
+      }
+      .main-header .desc {
+        color: #e2e5ff;
+        display: block;
+        margin-bottom: 2px;
+      }
+      .main-header .highlight {
+        color: #4f5ff0;
+        font-weight: bold;
+        font-size: 1.15rem;
+        display: block;
+        margin-top: 8px;
+      }
+
+  </style>
+
+  <!-- popup stili ve script dosyası -->
+  <style>
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .overlay img {
+      max-width: 700px;
+      
+      width: 80%;
+      height: auto;
+      border: 5px solid #fff;
+      border-radius: 10px;
+    }
+    
+  </style>
+  <script>
+    document.addEventListener('keydown', function(e) {
+      if (e.key === "Escape") {
+        var popup = document.getElementById('popup');
+        if (popup && popup.style.display === 'flex') {
+          popup.style.display = 'none';
+        }
+      }
+    });
+  </script>
+  <script>
+    // Mobilde geri tuşu ile popup kapansın
+    window.addEventListener('popstate', function() {
+      var popup = document.getElementById('popup');
+      if (popup && popup.style.display === 'flex') {
+        popup.style.display = 'none';
+        // Popup kapandıktan sonra ileri tuşu ile tekrar açılmasın diye
+        history.pushState(null, '', location.href);
+      }
+    });
+
+    // Popup açıldığında history'ye yeni bir state ekle
+    function openPopup(imageSrc) {
+      document.getElementById('popup-img').src = imageSrc;
+      document.getElementById('popup').style.display = 'flex';
+      history.pushState({popup: true}, '', location.href);
+    }
+  </script>
+</head>
+
+
+
+<body>
+  <!-- merhaba hoşgeldiniz kısmı-->
+  <header class="main-header">
+  <h1>@ mericc_art'a hoşgeldin</h1>
+  <p>
+    <span class="welcome">HEEEEY selam, Ben <strong>MERİÇ</strong></span><br>
+    <span class="desc">İstanbula yeni geldim, çevre kazanmak ve tanıtım için çok uygun fiyata dövmeler yapıyorum.</span><br>
+    <span class="desc">Şu an tek ihtiyacım olan şey, bol bol müşteri. Eğer arkadaşlarınızı getirirseniz azami miktarda indirime tabi tutulacaksınız.</span><br>
+    <span class="desc">Bakın bu bir yapay zeka destekli Instagram algoritması veya kapitalist reklam oyunlarından değil.</span><br>
+    <span class="desc">Ben tamamen doğal şans ürünü bir reklamım. Eğer bu siteye girebilmek için QR kodumu bulup tıkladıysan emin ol bu bir şans, belki de bir işaret (:</span><br>
+    <span class="highlight">Müşteri getiriseniz daha fazla dövme yaptırabilirisiniz ( :: </span>
+  </p>
+  </header>
+
+
+  <!-- container  kısmı -->
+  <div class="container">
+   <div class="tattoo">
+        <h2>400 TL'ye minimal dövme yaptırabilirsin</h2>
+
+         <div style="display: flex; justify-content: center;  gap: 50px;">
+    
+         <img src="img/minimal/minimal_1.jpg" style="width: 200px; cursor: pointer;" onclick="openPopup('img/minimal/minimal_1.jpg')">
+
+    
+         <img src="img/minimal/minimal_2.jpg" style="width: 200px; cursor: pointer;" onclick="openPopup('img/minimal/minimal_2.jpg') ">
+     
+        </div>
+        <p>minimal dövmeler yaklaşık bu boyutlarda olanlar, bu boyuutta istedğin şeyi yaptırabilrsin <br>
+        birden fazla yaparsanız mutlaka indirime tabi olursunn -_- </a>.</p>
+    </div>
+
+        <!-- Ortak popup kutusu (sayfanın sonunda bir kere eklenir) -->
+        <div id="popup" class="overlay" onclick="this.style.display='none'">
+        <img id="popup-img" src="">
+      
+        </div>
+    <!-- poop up açılması için gereken sctirpt dosyası -->
+    <script>
+    function openPopup(imageSrc) {
+        document.getElementById('popup-img').src = imageSrc;
+        document.getElementById('popup').style.display = 'flex';
+    }
+    </script>
+
+    <!--FREE KISIM-->
+    <div class="tattoo">
+      	<h2><strong> FREEE</strong> -- ÜCRETSİZ DÖVME --  <strong>FREEEE</strong> </h2>
+     	 <p>sayfamda öne çıkanlar kısmında ücretsiz çalışmak istediğim modeller var, 
+	    beğendiklerini tamamen ücretsiz bi şekilde yaptırabilirsin<br>
+        <strong><a href="https://www.instagram.com/mericc_art/">@mericc_art</strong>
+        </a><br>burada bir kaç örnek görebilirisiniz</p>
+        <div style="display: flex; justify-content: center; gap: 30px;">
+            <img src="img/free/free_1.jpg" style="cursor: pointer;" onclick="openPopup('img/free/free_1.jpg')">
+            <img src="img/free/free_2.jpg" style="cursor: pointer;" onclick="openPopup('img/free/free_2.jpg')">
+            <img src="img/free/free_3.jpg" style="cursor: pointer;" onclick="openPopup('img/free/free_3.jpg')">
+            <img src="img/free/free_4.jpg" style="cursor: pointer;" onclick="openPopup('img/free/free_4.jpg')">
+        </div>  
+    </div>
+    
+    <!-- maliyetine kısmı -->
+    <div class="tattoo">
+      	<h2><strong> Maliyetine </strong> -- SADECE GİDERLER VE ZAMAN İÇİN ÖDE --  <strong>Maliyetine</strong> </h2>
+     	 <p> Yine sayfamda öne çıkanlar kısmında 
+	         maliyetine çalışmak istediğim modeller var<br>
+	         beğendiklerini 400 ile 1200 tl arasında bi 
+	         fiyata yaptırabilirisin
+	         <a href="https://www.instagram.com/mericc_art/">@mericc_art</a><br>
+             işte bazı örnekler</p>
+        <div style="display: flex; justify-content: center; gap: 30px;">
+            <img src="img/ı_wnt/wnt_1.jpg" style="cursor: pointer;" onclick="openPopup('img/ı_wnt/wnt_1.jpg')">
+            <img src="img/ı_wnt/wnt_2.jpg" style="cursor: pointer;" onclick="openPopup('img/ı_wnt/wnt_2.jpg')">
+            <img src="img/ı_wnt/wnt_3.jpg" style="cursor: pointer;" onclick="openPopup('img/ı_wnt/wnt_3.jpg')">
+            <img src="img/ı_wnt/wnt_4.jpg" style="cursor: pointer;" onclick="openPopup('img/ı_wnt/wnt_4.jpg')">
+        </div>
+
+           
+
+
+
+
+
+
+    </div>
+
+    <!-- işleyiş kısmı -->
+    <div class="tattoo">
+      <h2>işleyiş - SSS</h2>
+        <p>Dövmeleri evde yapıyorum. Bu yüzden her şey çok ucuz.<br> 
+	      Evet herşey temiz ve steril, hiç merak etmeyin  <br>
+	      Hayır tabikide iğneleri tekrar kullanmıyorum <br> 
+	      Evet beğenmediğiniz yerleri düzetlebilir ve istedğiniz şekilde ekleme çıkarma yapabilrim <br>
+        2 hafta sonrasında tekrar geldiğinizde ücretsiz olarak kontrol edebilir ve rötüş yapabilirim <br>
+        <br>
+        <strong>Dövmeyi evde yapıyorum, bu yüzden bi stüdyo değilde arkadaşınıza dövme yaptırırmış gibi düşünebilirsiniz.
+        Şu süreçte amacım çevre kazanmak olduğu için 5k lik bir dövmeyi 1-2k arasında yapabilirim<br>
+      </strong>
+
+	<strong><a href="https://www.instagram.com/mericc_art/">@mericc_art</a> 
+	</strong>a yaz randevunu ayarla ;) </p>
+    </div>
+
+    <!-- piercing kısmı -->
+    <div class="tattoo">
+      <h2>PİERCİNG & DELİM</h2>
+      <p>Her türlü delim işlemi için de gelebilirsiniz.<br>
+      kulak ,septum, tragus, dudak, burun, kaş, dil, göğüs, göbek vs.<br>
+      DELİM FİYATLARI TANITIM AMAÇLI <strong>100 TL</strong> OLACAKTIR.<br>
+      Fiyat sadece delim içindir. Takmak istediğiniz şeyi kendiniz getirebilir veya maliyetine benden alabilrisiniz<br>
+      </p>
+    </div>
+
+    <!-- iletişim kısmı -->
+    <div class="cta">
+      <p>📍 İstanbul / Bayrampapşa<br><a href="https://maps.app.goo.gl/15EWgFuQ4dBcoABs7">
+	 konum </a></p>
+     </p>
+ 
+    </div>
+  
+    
+     
+    
+    
+</body>
+</html>
